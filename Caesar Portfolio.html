@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Caesar K. Julius — Portfolio</title>
+  <meta name="description" content="Portfolio of Caesar K. Julius — Cybersecurity enthusiast, developer, and IoT hobbyist." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2d9b0d6b7.js" crossorigin="anonymous"></script>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#4f46e5; --glass: rgba(255,255,255,0.04);
+      --light-bg:#f8fafc; --light-card:#ffffff; --light-muted:#475569; --light-accent:#5b21b6;
+    }
+    [data-theme="light"]{ --bg:var(--light-bg); --card:var(--light-card); --muted:var(--light-muted); --accent:var(--light-accent); --glass: rgba(0,0,0,0.03);}
+    *{box-sizing:border-box}
+    html,body{height:100%; margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial; background:var(--bg); color: #e6eef8; -webkit-font-smoothing:antialiased}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin:0 auto; padding:24px}
+
+    /* NAV */
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:12px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{width:46px; height:46px; border-radius:10px; background:linear-gradient(135deg,var(--accent), #06b6d4); display:flex; align-items:center; justify-content:center; font-weight:700}
+    .navlinks{display:flex; gap:12px; align-items:center}
+    .navlinks > li{list-style:none; position:relative}
+    .navlinks a{padding:8px 12px; border-radius:8px; display:inline-block}
+    .navlinks a:hover{background:var(--glass)}
+    .dropdown-btn{display:flex; gap:6px; align-items:center; cursor:pointer}
+    .dropdown{position:absolute; top:44px; left:0; min-width:220px; background:var(--card); border-radius:10px; padding:8px; box-shadow:0 8px 30px rgba(2,6,23,0.6); display:none; z-index:50}
+    .dropdown.show{display:block}
+    .dropdown .group{padding:8px;border-radius:8px}
+    .dropdown .group + .group{margin-top:6px; border-top:1px solid rgba(255,255,255,0.03)}
+
+    /* Hamburger (mobile) */
+    .hamburger{display:none; width:44px; height:44px; align-items:center; justify-content:center; border-radius:8px; cursor:pointer}
+    .mobile-menu{display:none}
+
+    /* HERO */
+    .hero{display:grid; grid-template-columns:1fr 360px; gap:28px; align-items:center; padding:38px 0}
+    .intro h1{font-size:32px; margin:0 0 10px}
+    .intro .tag{color:var(--muted); margin-bottom:10px}
+    .cta{display:flex; gap:12px; margin-top:16px}
+    .btn{padding:10px 14px; border-radius:10px; background:var(--accent); color:white; font-weight:600; border:none; cursor:pointer}
+    .outline{background:transparent; border:1px solid rgba(255,255,255,0.06)}
+
+    .profile{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border-radius:14px; padding:20px; text-align:center}
+    .avatar{width:120px; height:120px; border-radius:16px; margin:0 auto 12px; display:flex; align-items:center; justify-content:center; font-weight:700}
+    .small{font-size:14px; color:var(--muted)}
+
+    /* SECTIONS */
+    section{padding:28px 0}
+    h2{margin:0 0 12px; font-size:20px}
+    .card{background:var(--card); padding:14px; border-radius:12px; box-shadow: 0 6px 18px rgba(2,6,23,0.5)}
+
+    /* Projects */
+    .projects-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .proj-img{height:140px; border-radius:8px; background:linear-gradient(135deg,#0ea5a4,#4f46e5); display:flex; align-items:center; justify-content:center; color:white}
+    .proj-meta{display:flex; justify-content:space-between; align-items:center; margin-top:8px}
+
+    /* Skills */
+    .skills-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+    .skill-item{padding:10px; border-radius:8px}
+
+    /* Contact */
+    .contact-row{display:flex; gap:12px; align-items:center}
+
+    /* Footer */
+    footer{padding:18px 0; text-align:center; color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .projects-grid{grid-template-columns:repeat(2,1fr)}
+      .skills-grid{grid-template-columns:repeat(2,1fr)}
+      .navlinks{display:none}
+      .hamburger{display:flex}
+      .mobile-menu{display:block}
+    }
+    @media (max-width:520px){
+      .projects-grid{grid-template-columns:1fr}
+      .skills-grid{grid-template-columns:1fr}
+    }
+
+    /* small utilities */
+    .muted{color:var(--muted)}
+    .chip{display:inline-flex; gap:8px; align-items:center; padding:6px 8px; border-radius:999px; background:var(--glass)}
+    .fade-up{opacity:0; transform:translateY(6px); transition:all 450ms cubic-bezier(.2,.8,.2,1)}
+    .fade-up.show{opacity:1; transform:none}
+  </style>
+</head>
+<body>
+  <div id="app" data-theme="dark">
+    <div class="container">
+      <nav class="nav">
+        <div class="brand">
+          <div class="logo">CK</div>
+          <div>
+            <div style="font-weight:700">Caesar K. Julius</div>
+            <div style="font-size:12px; color:var(--muted)">Cybersecurity • Software • IoT</div>
+          </div>
+        </div>
+
+        <ul class="navlinks" id="navlinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#career">Career Objective</a></li>
+
+          <li>
+            <div class="dropdown-btn" data-dropdown="projects">Projects <i class="fa-solid fa-caret-down" style="font-size:12px"></i></div>
+            <div class="dropdown" id="projects-dropdown">
+              <div class="group"><a href="#projects-iot">IoT Projects</a></div>
+              <div class="group"><a href="#projects-software">Software Projects</a></div>
+              <div class="group"><a href="#projects-security">Cybersecurity Projects</a></div>
+            </div>
+          </li>
+
+          <li>
+            <div class="dropdown-btn" data-dropdown="skills">Skills <i class="fa-solid fa-caret-down" style="font-size:12px"></i></div>
+            <div class="dropdown" id="skills-dropdown">
+              <div class="group">
+                <strong>Programming Languages</strong>
+                <div class="small">Java, Python, C, C++, Visual Basic</div>
+              </div>
+              <div class="group">
+                <strong>Database Management</strong>
+                <div class="small">SQL, MySQL</div>
+              </div>
+              <div class="group">
+                <strong>Web Technologies</strong>
+                <div class="small">HTML, CSS, JavaScript</div>
+              </div>
+              <div class="group">
+                <strong>Networking</strong>
+                <div class="small">TCP/IP, LAN, WAN</div>
+              </div>
+              <div class="group">
+                <strong>Typing & Data Entry</strong>
+                <div class="small">Proficient & Accurate — Record keeping</div>
+              </div>
+            </div>
+          </li>
+
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div style="display:flex; gap:8px; align-items:center">
+          <button class="chip" id="themeToggle" title="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+          <button class="hamburger" id="hambtn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+        </div>
+      </nav>
+
+      <!-- MOBILE MENU -->
+      <div class="mobile-menu" id="mobileMenu" style="display:none; margin-top:12px">
+        <div class="card" style="padding:12px">
+          <div style="display:flex; flex-direction:column; gap:8px">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#career">Career Objective</a>
+            <div>
+              <div style="font-weight:600; margin-bottom:6px">Projects</div>
+              <a href="#projects-iot" style="display:block; margin-left:8px">IoT Projects</a>
+              <a href="#projects-software" style="display:block; margin-left:8px">Software Projects</a>
+              <a href="#projects-security" style="display:block; margin-left:8px">Cybersecurity Projects</a>
+            </div>
+            <div>
+              <div style="font-weight:600; margin-bottom:6px">Skills</div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px">
+                <div class="card small">Programming<br><span class="muted">Java, Python, C++</span></div>
+                <div class="card small">Web<br><span class="muted">HTML, CSS, JS</span></div>
+                <div class="card small">Database<br><span class="muted">SQL, MySQL</span></div>
+                <div class="card small">Networking<br><span class="muted">TCP/IP</span></div>
+              </div>
+            </div>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO -->
+      <header id="home" class="hero">
+        <div>
+          <div class="intro">
+            <h1>Hello — I’m <span style="color:var(--accent)">Caesar K. Julius</span></h1>
+            <div class="tag">Cybersecurity Enthusiast · Software Developer · IoT Hobbyist</div>
+            <p class="muted">I build practical software solutions and IoT devices while learning advanced cybersecurity techniques. I enjoy teaching and creating useful tools for small businesses and schools.</p>
+            <div class="cta">
+              <a class="btn" href="#projects">View Projects</a>
+              <a class="btn outline" href="#contact">Contact Me</a>
+            </div>
+          </div>
+
+          <div style="margin-top:22px">
+            <div class="card fade-up" style="padding:12px">
+              <strong>Quick stats</strong>
+              <div style="display:flex; gap:8px; margin-top:8px">
+                <div class="chip"><i class="fa-solid fa-flask"></i> Projects</div>
+                <div class="chip"><i class="fa-solid fa-award"></i> Teaching 20+ yrs</div>
+                <div class="chip"><i class="fa-solid fa-laptop-code"></i> Programming</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="profile">
+            <div class="avatar" style="background:linear-gradient(135deg,#06b6d4,#4f46e5);">CK</div>
+            <div style="font-weight:700">Caesar K. Julius</div>
+            <div class="small">Lead Cybersecurity Analyst & Teacher</div>
+            <div style="margin-top:12px">
+              <a class="btn" href="https://github.com/your-github-username" target="_blank"><i class="fa-brands fa-github"></i>&nbsp; GitHub</a>
+            </div>
+          </div>
+        </aside>
+      </header>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="card">
+          <h2>About</h2>
+          <p class="muted">I am a software developer and cybersecurity enthusiast with a teaching background. I create practical applications and IoT projects for small businesses and educational institutions. My strengths include programming, networking, and system administration. I'm passionate about sharing knowledge and building tools that make daily tasks easier.</p>
+        </div>
+      </section>
+
+      <!-- CAREER OBJECTIVE -->
+      <section id="career">
+        <div class="card">
+          <h2>Career Objective</h2>
+          <p class="muted">To build a successful career in Information Technology with a focus on cybersecurity, software development, and innovative problem-solving — contributing to digital transformation and organizational growth through technology. I seek to apply my teaching experience and technical knowledge to develop secure, user-friendly systems and mentor others.</p>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects">
+        <div class="card">
+          <h2>Projects</h2>
+          <p class="muted">Below are sample projects — replace these with your real GitHub repositories. Click a card to view the repo.</p>
+
+          <div class="projects-grid" id="projectsGrid" style="margin-top:12px">
+            <!-- JS will inject project cards -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills">
+        <div class="card">
+          <h2>Skills</h2>
+          <p class="muted">Click a skill category to learn more.</p>
+          <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap">
+            <button class="chip" data-skill="prog">Programming Languages</button>
+            <button class="chip" data-skill="db">Database Management</button>
+            <button class="chip" data-skill="web">Web Technologies</button>
+            <button class="chip" data-skill="net">Networking</button>
+            <button class="chip" data-skill="typing">Typing & Data Entry</button>
+          </div>
+
+          <div id="skillDetail" style="margin-top:12px" class="fade-up card">
+            <strong>Programming Languages</strong>
+            <div class="small" style="margin-top:6px">Java, Python, C, C++, Visual Basic</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="card">
+          <h2>Contact</h2>
+          <div class="contact-row">
+            <div>
+              <div style="font-weight:700">GitHub</div>
+              <a href="https://github.com/your-github-username" target="_blank" class="small muted">https://github.com/your-github-username</a>
+            </div>
+            <div>
+              <div style="font-weight:700">Email</div>
+              <div class="small muted">caesarjulius4499@gmail.com</div>
+            </div>
+          </div>
+          <div style="margin-top:12px">
+            <form onsubmit="alert('This is a demo. Replace form action with your backend or form provider.'); return false;">
+              <div style="display:flex; gap:8px; flex-direction:column">
+                <input required placeholder="Your name" style="padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit">
+                <input required type="email" placeholder="Your email" style="padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit">
+                <textarea required placeholder="Message" style="padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit"></textarea>
+                <button class="btn" type="submit">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="muted">© " + new Date().getFullYear() + " Caesar K. Julius — Built with ❤️</div>
+      </footer>
+
+    </div>
+  </div>
+
+  <script>
+    // -- Data & sample projects (replace URLs with your repos)
+    const projects = [
+      {title:'IoT Smart Dustbin', desc:'Prototype: Ultrasonic + ESP8266 automation for hospital waste management.', img:'', url:'https://github.com/your-github-username/iot-smart-dustbin'},
+      {title:'Student Attendance App', desc:'VB.Net student attendance manager with DataGridView and indexing.', img:'', url:'https://github.com/your-github-username/attendance-app'},
+      {title:'Web Portfolio Template', desc:'Static portfolio template (this site) ready for GitHub Pages.', img:'', url:'https://github.com/your-github-username/caesar-portfolio'}
+    ];
+
+    const projectsGrid = document.getElementById('projectsGrid');
+    projects.forEach(p =>{
+      const el = document.createElement('div'); el.className='card'; el.style.cursor='pointer';
+      el.innerHTML = `
+        <div style="display:flex; flex-direction:column; gap:8px">
+          <div class="proj-img">${p.title.split(' ').slice(0,2).join(' ')}</div>
+          <div>
+            <div style="font-weight:700">${p.title}</div>
+            <div class="small muted">${p.desc}</div>
+            <div class="proj-meta">
+              <div class="small muted">Sample</div>
+              <div><a href="${p.url}" target="_blank" class="small">View on GitHub <i class='fa-brands fa-github'></i></a></div>
+            </div>
+          </div>
+        </div>
+      `;
+      el.addEventListener('click', ()=> window.open(p.url,'_blank'));
+      projectsGrid.appendChild(el);
+    });
+
+    // -- Dropdown toggles (click/tap friendly)
+    document.querySelectorAll('.dropdown-btn').forEach(btn =>{
+      btn.addEventListener('click', (e)=>{
+        const id = btn.dataset.dropdown;
+        const menu = document.getElementById(id+ '-dropdown') || document.getElementById(id+'-dropdown');
+        if(!menu) return;
+        menu.classList.toggle('show');
+      });
+    });
+
+    // close dropdowns when clicking outside
+    document.addEventListener('click', (e)=>{
+      if(e.target.closest('.dropdown-btn')) return;
+      document.querySelectorAll('.dropdown').forEach(d=> d.classList.remove('show'));
+    });
+
+    // -- Mobile hamburger
+    const hambtn = document.getElementById('hambtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hambtn.addEventListener('click', ()=>{
+      if(mobileMenu.style.display === 'none' || mobileMenu.style.display==='') mobileMenu.style.display='block'; else mobileMenu.style.display='none';
+    });
+
+    // -- Skill details
+    const skillDetail = document.getElementById('skillDetail');
+    document.querySelectorAll('[data-skill]').forEach(btn =>{
+      btn.addEventListener('click', ()=>{
+        const s = btn.dataset.skill;
+        let html='';
+        if(s==='prog') html = '<strong>Programming Languages</strong><div class="small" style="margin-top:6px">Java, Python, C, C++, Visual Basic</div>';
+        if(s==='db') html = '<strong>Database Management</strong><div class="small" style="margin-top:6px">SQL, MySQL</div>';
+        if(s==='web') html = '<strong>Web Technologies</strong><div class="small" style="margin-top:6px">HTML, CSS, JavaScript</div>';
+        if(s==='net') html = '<strong>Networking</strong><div class="small" style="margin-top:6px">TCP/IP, LAN, WAN</div>';
+        if(s==='typing') html = '<strong>Typing & Data Entry</strong><div class="small" style="margin-top:6px">Proficient typing, accurate record keeping</div>';
+        skillDetail.innerHTML = html; skillDetail.classList.add('show');
+      });
+    });
+
+    // -- Theme toggle
+    const app = document.getElementById('app');
+    const themeToggle = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('ckj-theme');
+    if(saved) app.setAttribute('data-theme', saved);
+    themeToggle.addEventListener('click', ()=>{
+      const current = app.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      app.setAttribute('data-theme', next);
+      localStorage.setItem('ckj-theme', next);
+    });
+
+    // -- Small fade-in on scroll
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
+    }, {threshold:0.12});
+    document.querySelectorAll('.fade-up').forEach(el=> observer.observe(el));
+
+    // replace footer year (simple fallback if template string removed by server)
+    try{ document.querySelector('footer div').textContent = '© ' + new Date().getFullYear() + ' Caesar K. Julius — Built with ❤️' }catch(e){}
+  </script>
+</body>
+</html>

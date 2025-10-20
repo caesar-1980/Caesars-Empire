@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Caesar Julius — Home</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <div class="brand"><span class="brand-accent">Caesar</span> K. Julius</div>
+      <ul class="nav-links" id="mainNav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="career.html">Career Objective</a></li>
+        <li class="has-dropdown">
+          <a href="projects.html">Projects ▾</a>
+          <div class="dropdown">
+            <a href="projects.html#iot">IoT Projects</a>
+            <a href="projects.html#software">Software Projects</a>
+            <a href="projects.html#cyber">Cybersecurity Projects</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="skills.html">Skills ▾</a>
+          <div class="dropdown">
+            <a href="skills.html#programming">Programming</a>
+            <a href="skills.html#database">Database</a>
+            <a href="skills.html#web">Web Tech</a>
+            <a href="skills.html#networking">Networking</a>
+            <a href="skills.html#typing">Typing & Data Entry</a>
+          </div>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><button id="themeToggle" class="icon-btn" aria-label="Toggle theme">🌙</button></li>
+      </ul>
+      <button class="menu-toggle" id="menuBtn" aria-label="Open menu">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-left">
+        <img src="portfolio-1.jpg" alt="Caesar Julius" class="profile-photo">
+      </div>
+
+      <div class="hero-right">
+        <h1 class="welcome">Hi — I’m <span class="name-highlight">Caesar Julius</span></h1>
+        <h2 class="typing-line"><span id="typing-text"></span><span class="cursor">|</span></h2>
+        <p class="lead">Welcome to my digital space where technology meets creativity — projects, tools, and ideas I build and teach.</p>
+        <div class="hero-cta">
+          <a class="btn" href="projects.html">View Projects</a>
+          <a class="btn outline" href="contact.html">Contact</a>
+        </div>
+        <div class="hero-gallery">
+          <img src="IMG_9443@1669632452.jpg" alt="sample project" class="mini-thumb">
+          <img src="IMG-20240525-WA0014.jpg" alt="sample project" class="mini-thumb">
+          <img src="facebook_1733303214382_7270000605296535605.jpg" alt="sample project" class="mini-thumb">
+           <img src="IMG_20241130_141329_825@1669565339.jpg" alt="sample project" class="mini-thumb">
+            <img src="cj1.jpg" alt="sample project" class="mini-thumb">
+             <img src="cj3.jpg" alt="sample project" class="mini-thumb">
+             
+        </div>
+      </div>
+    </section>
+
+    <section class="highlights container">
+      <article class="card">
+        <img src="cj4.jpg" alt="programming" class="card-img">
+        <h3>Programming</h3>
+        <p>Java, Python, C, C++, VB — practical, project-driven development.</p>
+      </article>
+      <article class="card">
+        <img src="cj5.jpg" alt="networking" class="card-img">
+        <h3>Networking</h3>
+        <p>TCP/IP, LAN/WAN, system administration and troubleshooting.</p>
+      </article>
+      <article class="card">
+        <img src="cj steev.png" alt="database" class="card-img">
+        <h3>Data & Record Keeping</h3>
+        <p>SQL/MySQL, accurate record keeping and typing proficiency.</p>
+      </article>
+    </section>
+
+    <section class="visual-quote container">
+      <div class="v-card">
+        <h3>Design + Security + Teaching</h3>
+        <p class="muted">I build tools, secure systems, and teach others to do the same.</p>
+      </div>
+      <img src="IMG_8916@1669631560.jpg" alt="background tech" class="wide-image">
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>© <span id="year"></span> Caesar Julius</div>
+      <div class="muted">Built with creativity</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — Caesar Julius</title>
+ <link rel="stylesheet" href="contact.css">
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <div class="brand"><span class="brand-accent">Caesar</span> K. Julius</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="career.html">Career Objective</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuBtn">☰</button>
+  </nav>
+</header>
+
+<main class="contact-main">
+  <section class="contact-container">
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <p>Reach out for inquiries, projects, or collaborations. You can email directly or use the form.</p>
+
+      <div class="info-cards">
+        <div class="info-card">
+          <i class="fa-solid fa-location-dot"></i>
+          <h3>Address</h3>
+          <p>Church of Pentecost, Central Assembly<br>
+             P.O. Box 123, New York Central - Zenu<br>
+             Ashaiman Area - Ghana</p>
+        </div>
+
+        <div class="info-card">
+          <i class="fa-solid fa-phone"></i>
+          <h3>Phone</h3>
+          <p>+233 59 249 6100<br>+233 20 160 4903</p>
+        </div>
+
+        <div class="info-card">
+          <i class="fa-solid fa-envelope"></i>
+          <h3>Email</h3>
+          <p>info@caesarsempire.org<br>caesarjulius4499@gmail.com</p>
+        </div>
+      </div>
+
+  <!-- Social Media -->
+<div class="social-links">
+  <a href="https://www.facebook.com/YourFacebookUsername" target="_blank" title="Facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://wa.me/233592496100" target="_blank" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://www.instagram.com/YourInstagramUsername" target="_blank" title="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://github.com/your-github-username" target="_blank" title="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/YourLinkedInUsername" target="_blank" title="LinkedIn">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+</div>
+
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <h2>Send a Message</h2>
+      <form id="contactForm">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Your Full Name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" placeholder="Type your message..." required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+        <p id="form-success" class="form-success">Your message has been sent!</p>
+      </form>
+    </div>
+
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>© <span id="year"></span> Caesar K. Julius</div>
+  </div>
+</footer>
+
+<script src="contact.js"></script>
+</body>
+</html>
