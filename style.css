@@ -51,12 +51,18 @@ html, body {
   color: #b2ff59;
 }
 .nav-links {
-  display: flex;
   gap: 10px;
   align-items: center;
   list-style: none;
-  padding: 0;
   margin: 0;
+  display: none;
+    flex-direction: column;
+    background: rgba(10, 61, 98, 0.95);
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    border-radius: 12px;
+    padding: 15px;
 }
 .nav-links a {
  
@@ -70,6 +76,7 @@ html, body {
 .nav-links a:hover, .nav-links a.active {
   background: rgba(255, 255, 255, 0.15);
    color: #00b894; /* bright green highlight */
+   display: flex;
 }
 .icon-btn {
   background: transparent;
